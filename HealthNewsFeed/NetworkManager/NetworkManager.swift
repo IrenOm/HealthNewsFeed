@@ -10,7 +10,7 @@ import Foundation
 
 class NetworkManager {
     
-    static let api = "https://newsapi.org/v2/top-headlines?country=lv&category=health&apiKey=1920b7f830414a5bb662b581372ff993"
+    static let api = "https://newsapi.org/v2/everything?q=health&sortBy=popularity&apiKey=1920b7f830414a5bb662b581372ff993"
     
     static func fetchData(url: String, completion: @escaping (NewsItems) -> () ) {
         

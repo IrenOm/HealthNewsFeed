@@ -6,24 +6,80 @@
 //
 
 import UIKit
+import CoreData
+import SDWebImage
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var descTextView: UITextView!
+    
+    var authorString: String = String()
+    var titleString: String = String()
+    var webString: String = String()
+    var imageString: String = String()
+    var descString: String = String()
+    
+    var savedItems = [Items]()
+    var context: NSManagedObjectContext?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = authorString
+      
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
+        
+        updateDetails()
     }
     
+    func updateDetails() {
+        titleLabel.text = titleString
+        newsImageView.sd_setImage(with: URL(string: imageString))
+        descTextView.text = descString
+        
+    }
+    
+    func saveData(){
+//        #warning("save into core data")
+        do {
+            try context?.save()
+            basicAlert(title: "Saved!", message: "\(titleString) has been saved. Go to Saved Tab Tar Setcion to open it.")
+        }catch {
+            print(error)
+        }
+    }
 
-    /*
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+        let newItem = Items(context:self.context!)
+        newItem.newsAuthor = authorString
+        newItem.newsContent = descString
+        newItem.newsTitle = titleString
+        newItem.url = webString
+        if !imageString.isEmpty {
+            newItem.image = imageString
+        }
+        
+        self.savedItems.append(newItem)
+        
+        saveData()
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination: WebViewController = segue.destination as! WebViewController
+        destination.urlString = webString
+        
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

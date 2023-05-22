@@ -127,12 +127,18 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ids-EO-ayK">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ids-EO-ayK">
                                                 <rect key="frame" x="0.0" y="63" width="265" height="159"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="159" id="NyC-JS-RJc"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="265" id="ekd-mS-3ra"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mRN-xP-xvM">
                                                 <rect key="frame" x="0.0" y="230" width="265" height="214"/>
@@ -151,7 +157,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="cOL-ft-O10">
                                         <rect key="frame" x="0.0" y="465" width="265" height="43"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdT-Jm-qSd">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdT-Jm-qSd">
                                                 <rect key="frame" x="0.0" y="0.0" width="122" height="43"/>
                                                 <color key="backgroundColor" red="0.77134924819999995" green="0.76217895179999995" blue="0.14504820460000001" alpha="0.75209585180000005" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -160,12 +166,17 @@
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Read more"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <segue destination="5n9-61-1hm" kind="show" id="Uj9-JZ-1tb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJY-4W-sxx">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJY-4W-sxx">
                                                 <rect key="frame" x="143" y="0.0" width="122" height="43"/>
                                                 <color key="backgroundColor" red="0.77134924819999995" green="0.76217895179999995" blue="0.14504820460000001" alpha="0.75209585180000005" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -174,7 +185,15 @@
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="saveButtonTapped:" destination="Vv9-Vh-ycZ" eventType="touchUpInside" id="eAX-U4-e0t"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -190,15 +209,20 @@
                             <constraint firstItem="1It-Mb-kIF" firstAttribute="leading" secondItem="09r-ry-sP1" secondAttribute="leading" constant="27.5" id="ued-rY-MFm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descTextView" destination="mRN-xP-xvM" id="RaD-my-7x6"/>
+                        <outlet property="newsImageView" destination="ids-EO-ayK" id="pvy-Ep-BvH"/>
+                        <outlet property="titleLabel" destination="HHM-Yw-h8w" id="Mkq-E8-zbc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVj-HK-YdB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2752.5" y="379.22535211267603"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="FRF-Vc-3iO">
             <objects>
-                <viewController id="5n9-61-1hm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" hidesBottomBarWhenPushed="YES" id="5n9-61-1hm" customClass="WebViewController" customModule="HealthNewsFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="giQ-qi-PcY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,21 +246,24 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7QL-oe-pCI"/>
+                    <connections>
+                        <outlet property="webView" destination="xEs-y3-8z3" id="kIm-jT-j0Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlq-jn-cDz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3483" y="380"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Saved Table View Controller-->
         <scene sceneID="Dcx-gf-7PG">
             <objects>
-                <tableViewController id="Efv-kL-5Or" sceneMemberID="viewController">
+                <tableViewController id="Efv-kL-5Or" customClass="SavedTableViewController" customModule="HealthNewsFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="FrW-lK-dgy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedCell" rowHeight="200" id="fwH-AD-fe7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedCell" rowHeight="200" id="fwH-AD-fe7" customClass="NewsTableViewCell" customModule="HealthNewsFeed" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fwH-AD-fe7" id="LMX-WR-eZp">
@@ -272,6 +299,10 @@
                                         <constraint firstItem="kPS-km-wbA" firstAttribute="centerY" secondItem="LMX-WR-eZp" secondAttribute="centerY" id="X3J-5x-6Oi"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="newsImageView" destination="jht-9l-J4b" id="THR-GA-tSf"/>
+                                    <outlet property="newsTitleLabel" destination="f0u-mC-seT" id="D83-OR-eC1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
