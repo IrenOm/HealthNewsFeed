@@ -314,7 +314,7 @@
                         <barButtonItem key="leftBarButtonItem" image="info.circle.fill" catalog="system" id="ZnW-fW-5lf"/>
                         <barButtonItem key="rightBarButtonItem" image="trash.circle.fill" catalog="system" id="gBV-Ff-k28">
                             <connections>
-                                <action selector="deleteAllItemsTapped:" destination="Efv-kL-5Or" id="Bsn-ZW-yLx"/>
+                                <action selector="deleteAllItemsTapped:" destination="Efv-kL-5Or" id="Bff-rE-eHu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
