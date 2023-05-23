@@ -312,7 +312,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="QiS-Cv-Nua">
                         <barButtonItem key="leftBarButtonItem" image="info.circle.fill" catalog="system" id="ZnW-fW-5lf"/>
-                        <barButtonItem key="rightBarButtonItem" image="trash.circle.fill" catalog="system" id="gBV-Ff-k28"/>
+                        <barButtonItem key="rightBarButtonItem" image="trash.circle.fill" catalog="system" id="gBV-Ff-k28">
+                            <connections>
+                                <action selector="deleteAllItemsTapped:" destination="Efv-kL-5Or" id="Bsn-ZW-yLx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0M-xC-NLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
